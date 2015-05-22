@@ -1,0 +1,6 @@
+[submodule "chromarenderer"]
+	path = chromarenderer
+	url = git@github.com:bensteinert/chromarenderer.git
+[submodule "lib/hayai"]
+	path = lib/hayai
+	url = git@github.com:bensteinert/hayai.git
