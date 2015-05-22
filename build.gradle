@@ -29,7 +29,7 @@ model {
 
 import org.apache.tools.ant.taskdefs.condition.Os
 
-task runBenchmarks(type: Exec, dependsOn: ':assemble') {
+task runBenchmarks(type: Exec, dependsOn: 'assemble') {
     workingDir './build/binaries/benchmarksExecutable'
     commandLine Os.isFamily(Os.FAMILY_WINDOWS) ? 'benchmarks.exe' : './benchmarks'
 }
