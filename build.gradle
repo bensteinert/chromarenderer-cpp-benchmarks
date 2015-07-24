@@ -1,37 +1,21 @@
-apply plugin: 'cpp'
-
-model {
-    components {
-        hayai(NativeLibrarySpec) {
-            sources {
-                cpp {
-                    source {
-                        srcDir "lib/hayai/src"
-                        include "*.cpp"
-                    }
-                    exportedHeaders {
-                        srcDir "lib/hayai/src"
-                        include "*.hpp"
-                    }
-                }
-            }
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            url "http://dl.bintray.com/comsysto/crolabefra"
         }
-
-        benchmarks(NativeExecutableSpec) {
-            binaries.all {
-                lib library: 'hayai', linkage: 'static'
-                lib project: ':chromarenderer', library: 'chromarenderer', linkage: "static"
-            }
-        }
+    }
+    dependencies {
+        classpath 'com.comsysto.gradle:crolabefra-cpp-plugin:+'
     }
 }
 
+apply plugin: 'com.comsysto.gradle.crolabefra.cpp'
 
-import org.apache.tools.ant.taskdefs.condition.Os
-
-task runBenchmarks(type: Exec, dependsOn: 'assemble') {
-    workingDir './build/binaries/benchmarksExecutable'
-    commandLine Os.isFamily(Os.FAMILY_WINDOWS) ? 'benchmarks.exe' : './benchmarks'
+crolabefra {
+    projectToBenchmark = 'chromarenderer'
+    outputLibraryName = 'chromarenderer'
+    benchmarksPath = 'src/benchmarks/cpp'
 }
 
 
