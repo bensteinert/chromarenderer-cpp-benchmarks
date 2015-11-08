@@ -1,16 +1,6 @@
-buildscript {
-    repositories {
-        jcenter()
-        maven {
-            url "http://dl.bintray.com/comsysto/crolabefra"
-        }
-    }
-    dependencies {
-        classpath 'com.comsysto.gradle:crolabefra-cpp-plugin:+'
-    }
+plugins {
+    id "com.comsysto.gradle.crolabefra.cpp" version "0.2.0"
 }
-
-apply plugin: 'com.comsysto.gradle.crolabefra.cpp'
 
 crolabefra {
     projectToBenchmark = 'chromarenderer'
