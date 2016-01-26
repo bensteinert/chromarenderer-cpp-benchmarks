@@ -9,6 +9,6 @@ static float u, v = .0f;
 
 static float result;
 
-BENCHMARK(Triangle, MoellerTrumboreIntersection, 1000, 1000000) {
+BENCHMARK(Triangle, benchmarkMoellerTrumboreTriangleIntersect, 100, 1000000) {
     result = t.intersectRay(&ray, u, v);
 }
