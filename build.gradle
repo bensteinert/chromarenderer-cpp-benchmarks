@@ -8,6 +8,9 @@ crolabefra {
     benchmarksPath = 'src/benchmarks/cpp'
 }
 
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.13'
+}
 
 
 
