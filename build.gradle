@@ -4,7 +4,7 @@ plugins {
 
 crolabefra {
     projectToBenchmark = 'chromarenderer'
-    outputLibraryName = 'chromarenderer'
+    outputLibraryName = 'chroma'
     benchmarksPath = 'src/benchmarks/cpp'
 }
 
