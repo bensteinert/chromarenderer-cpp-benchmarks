@@ -24,7 +24,7 @@ namespace AccumulationBufferBenchmark {
     };
 
 
-    BENCHMARK_F(AccumulationBufferBenchmark, accumulate, 10, 100) {
+    BENCHMARK_F(AccumulationBufferBenchmark, accumulate, 100, 1) {
         accBuff += toAccumulate;
     }
 
